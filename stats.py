@@ -22,10 +22,22 @@ def number_of_characters(book: str):
                 character_count[character] = 1
     return character_count
 
+
+
 def sorted_characters(book: dict):
+    def sort_on(items):
+        return items["num"]
+
     sorted_list = []
 
     for character in book:
-        pass
+        temp_dict = {
+            "Char": character,
+            "num": book[character]
+        }
+        sorted_list.append(temp_dict)
+    sorted_list.sort(key=sort_on, reverse=True)
+    return sorted_list
+
 
 
